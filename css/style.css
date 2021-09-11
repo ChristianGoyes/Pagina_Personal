@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+}
+
+/* BODY */
+:root{
+    /* Colores */
+    --color-orange:#EC7063;
+    --color-blue-dark: #212F3C;
+    --color-blue-gray:#273746;
+    --white: #fff;
+    /* Fuentes */
+    --font-1:'Ubuntu', sans-serif;
+    --font-2:'Poppins', sans-serif;
+}
+/* ======= LAYOUT ========= */
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+/* ======== NAV =========== */
+.nav{
+    height:var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* =========== Estilo Barra ============= */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0 ;
+    /* background: #212F3C; */
+    font-family: var(--font-1);
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background:var(--color-orange);
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: var(--white);
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color:var(--color-orange);
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: var(--color-blue-dark);
+}
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color:var(--color-orange);
+}
+.navbar.sticky .menu li a:hover{
+    color:var(--color-blue-dark);
+}
+/* ===== Estilo BOTON ========= */
+.menu-btn{
+    color: var(--white);
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+/* ========= Seccion Inicio =============== */
+.home{
+
+    display: flex;
+    background: url(img/edicion\ fondo-oscuro.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    color: var(--white);
+    min-height: 500px;
+    font-family: var(--font-1);
+    /*animation: BgGradient 10s ease infinite; 
+     background-image: linear-gradient(135deg,
+    #00B7D4, #505488, #2F3F80, #5b1569, #5A4894); */
+}
+.home .max-width{
+    margin: auto 0 auto 40px;
+
+}
+.home .home-content .text-1{
+    font-size: 27px;
+    font-weight: 500;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color:var(--color-orange);
+    font-weight: 900;
+    /* animation: maquina 5s infinite alternate */;
+}
+.home .home-content a{
+    display: inline-block;
+    background: var(--color-orange);
+    color: var(--white);
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--color-orange);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.home .home-content a:hover{
+    color: var(--color-orange);
+    background: none;
+}
+
+/* ======== CODIGO REUSABLE  ============== */
+section{
+    padding: 6.25rem 0;
+}
+.about, .services, .skills, .teams, .contacto{
+    font-family: var(--font-2);
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    padding-top: -50px;
+    font-family: var(--font-1);
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    width: 180px;
+    height: 3px;
+    background: var(--color-blue-dark);
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color: var(--color-orange);
+    padding-bottom: 5px;
+    background: var(--white);
+    transform: translateX(-50%);
+}
+/* ============ Seccion Sobre =============== */
+
+.about .title::after{
+    content: "Quien soy";
+}
+.about .about_content{ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.about .about_content .left{
+    width: 40%;
+}
+.about .about_content .left img{
+    height: 25rem;
+    width: 25rem;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about_content .right{
+    width: 55%;
+}
+.about .about_content .right .text{
+    font-family: var(--font-1);
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about_content .right .text span{
+    color: var(--color-orange);
+}
+.about .about_content .right p{
+    text-align: justify;
+}
+.about .about_content .right a{
+    display: inline-block;
+    background: var(--color-orange);
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--color-orange);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.about .about_content .right a:hover{
+    color: var(--color-orange);
+    background: none;
+}
+
+/* ============== Seccion servicios ============== */
+
+.services{
+    color: var(--white);
+    background: var(--color-blue-dark);
+}
+
+.services .title::before{
+    background: var(--white);
+}
+.services .title::after{
+    background: var(--color-blue-dark);
+    content: "Promociono";
+}
+.services .services-content{ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.services .services-content .card{ 
+    width: calc(33% - 1.2rem);
+    background: var(--color-blue-gray);
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .services-content .card .box{
+    transition: all 0.3s ease;
+}
+.services .services-content .card:hover{
+    background: var(--color-orange);
+}
+.services .services-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .services-content .card i{ 
+    font-size: 50px;
+    color: var(--color-orange);
+    transition: all 0.3s ease;
+}
+.services .services-content .card:hover i{ 
+    color: var(--color-blue-dark);
+}
+.services .services-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+} 
+
+/* ============ Seccion Habilidades =========== */
+.skills .title::after{
+    content: "Mis conocimientos";
+}
+.skills .skill-content{ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skill-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skill-content .left .text{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.skills .skill-content .left p{
+    text-align: justify;
+    font-size: 15x;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.skills .skill-content .left a{
+    display: inline-block;
+    background: var(--color-orange);
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--color-orange);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.skills .skill-content .left a:hover{
+    color: var(--color-orange);
+    background: none;
+}
+.skills .skill-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skill-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skill-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skill-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills .skill-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--color-orange) ;
+}
+.skill-content .right .html::before{
+    width: 80%;
+}
+.skill-content .right .css::before{
+    width: 80%;
+}
+.skill-content .right .JavaScript::before{
+    width: 30%;
+}
+.skill-content .right .PHP::before{
+    width: 60%;
+}
+.skill-content .right .MySQL::before{
+    width: 60%;
+}
+/* =========== seccion equipo ============= */
+.teams{
+    color: var(--white);
+    background: var(--color-blue-dark);
+}
+.carrusel{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 16px;
+    margin-right: 16px;
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.teams .title::before{
+    background: var(--white);
+}
+.teams .title::after{
+    content: "con quien trabajo";
+    background: var(--color-blue-dark);
+}
+.teams .carrusel .card{
+    background: var(--color-blue-gray);
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.teams .carrusel .card:hover{
+    background:var(--color-orange);
+}
+.teams .carrusel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.teams .carrusel .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .carrusel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.teams .carrusel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-orange) ;
+}
+.teams .carrusel .card:hover img{
+    border-color: var(--white);
+}
+/* ============ SECCION CONTACTO =============== */
+.contacto .title::after{
+    content: "contactarse";
+}
+.contacto .contacto-content{ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.contacto .contacto-content .column{ 
+    width: calc(50% - 30px);
+}
+.contacto .contacto-content .text{
+    font-size: 20px;
+}
+.contacto .contacto-content .left p{
+    text-align: justify;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contacto .contacto-content .left .icons{
+    margin: 10px 0;
+}
+.contacto .contacto-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contacto .contacto-content .row .info{
+    margin-left: 30px;
+}
+.contacto .contacto-content .row i{
+    font-size: 25px;
+    color: var(--color-orange);
+}
+.contacto .contacto-content .info .head{
+    font-weight: 500;
+}
+.contacto .contacto-content .info .sub-title{
+    color: var(--color-blue-gray);
+}
+
+
+
+@keyframes maquina{
+    from {
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+
+
+/* RESPONSIVE */
+@media(max-width: 1300px){
+    .home .max-width{
+        margin-left: 0px;
+    }
+}
+@media(max-width: 1104px){
+    .about .about_content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+@media (max-width: 991){
+    .max-width{
+        padding: 0 50px;
+    }
+}
+
+@media(max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active::before{
+       color: var(--color-orange);
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: var(--color-blue-dark);
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+            left: 0;
+    }
+    .navbar .menu li{
+        display:block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 800px;
+    }
+    .about .about_content .column{
+        width: 100%;
+    }
+    .about .about_content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about_content .right{
+        flex: 100%;
+    }
+    .services .services-content .card{
+        width: calc(50% -10px);
+        margin-bottom: 20px;
+    }
+    .skills .skill-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width:690px){
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .services-content .card {
+        width: 100%;
+    }
+}
+
+@media (max-width:699px){
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+}
+
+/* .home__img{
+    position: absolute;
+    top: 1.5rem;
+    max-width: initial;
+    width: 270px;
+} */
+/* 
+@keyframes BgGradient{
+    0% {background-position: 0% 50% ;}
+    50% {background-position: 100% 50% ;}
+    100% {background-position: 0% 50% ;}
+} */
