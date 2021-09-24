@@ -130,6 +130,9 @@ text-decoration: none;
     font-weight: 900;
     /* animation: maquina 5s infinite alternate */;
 }
+.home .home-content .text-3 .Actividad{
+    font-style: normal;
+}
 .home .home-content a{
     display: inline-block;
     background: var(--color-orange);
@@ -216,6 +219,10 @@ section .title::after{
 .about .about_content .right .text span{
     color: var(--color-orange);
 }
+.about .about_content .right .text .Actividad{
+    font-style: normal;
+}
+
 .about .about_content .right p{
     text-align: justify;
 }
